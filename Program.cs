@@ -17,24 +17,22 @@
 
             
             Console.WriteLine("A pékáruk:");
-            Console.WriteLine("------------------------------------------------------------------------------------------------------");
-
+           
             foreach (Pekaruk p in pekaruk)
             {
                 Console.WriteLine(p);
             }
 
-            // 1. Mennyibe kerülnek, ha mindenből kettőt veszünk?
+            
             double osszeg = pekaruk.Sum(p => p.Ar() * 2);
 
             Console.WriteLine();
             Console.WriteLine($"1. Két-két darab összesen: {osszeg} Ft");
 
-            // 2. Csak a NEM kenyerek megjelenítése
+         
             Console.WriteLine();
             Console.WriteLine("2. Nem kenyér pékáruk:");
-            Console.WriteLine("-------------------------------------------------------------------------------------------------------------------");
-
+           
             foreach (Pekaruk p in pekaruk)
             {
                 if (p is not Kenyerek)
@@ -43,7 +41,7 @@
                 }
             }
 
-            // 3. Legolcsóbb kenyér
+          
             Kenyerek legolcsobbKenyér = pekaruk
                 .OfType<Kenyerek>()
                 .OrderBy(p => p.Ar())
@@ -51,8 +49,7 @@
 
             Console.WriteLine();
             Console.WriteLine("3. Legolcsóbb kenyér:");
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine(legolcsobbKenyér);
+              Console.WriteLine(legolcsobbKenyér);
         }
     }
 }
